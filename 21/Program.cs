@@ -12,33 +12,23 @@ namespace _21
         {
             Console.WriteLine("Приветствую тебя игрок)))");
 
-            int card;
+            string card;
             int sum = 0;
             int j = 10;
             for (int counter = 1; counter < 6; counter++)
             {
               Console.Write($"Введите значение {counter} карты:");
-                card = int.Parse(Console.ReadLine());
+                card = (Console.ReadLine());
 
                 switch (card)
                 {
-                    case 6:
-                        sum = sum + 6;
-                        break;
-                    case 7:
-                        sum = sum + 7;
-                        break;
-                    case 8:
-                        sum = sum + 8;
-                        break;
-                    case 9:
-                        sum = sum + 9;
-                        break;
-                    case 10:
-                        sum = sum + 10;
-                        break;
-                    default:
-                        Console.WriteLine("Такой карты не существует вколоде попробуйте еще раз:");
+                    case "6":  sum = sum + 6; break;
+                    case "7":  sum = sum + 7; break;
+                    case "8":  sum = sum + 8; break;
+                    case "9":  sum = sum + 9; break;
+                    case "10": sum = sum + 10; break;
+                    case "j":  sum = sum + 10;break;
+                    default: Console.WriteLine("Такой карты не существует вколоде попробуйте еще раз:");
                         counter += -1;
                         break;
 
