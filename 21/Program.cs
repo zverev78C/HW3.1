@@ -10,17 +10,17 @@ namespace _21
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Приветствую тебя игрок)))");
+            Console.WriteLine("Приветствую тебя игрок)))");   // приветствие игрока
 
-            string card;
-            int sum = 0;
-            int j = 10;
-            for (int counter = 1; counter < 6; counter++)
+            string card;                                     // задание переменной для карт
+            int sum = 0;                                     // инициализация переменной для суммы очков
+            
+            for (int counter = 1; counter < 6; counter++)          // создание цикла со счетчико м в 5 карт
             {
-              Console.Write($"Введите значение {counter} карты:");
+              Console.Write($"Введите значение {counter} карты:");  // программа просит игрока ввсети карту
                 card = (Console.ReadLine());
 
-                switch (card)
+                switch (card)                             // в блоке свитч происходит перебор значений карт и при совпадении в сумму добовляется соответствующие количество очков
                 {
                     case "2": sum = sum + 2; break;
                     case "3": sum = sum + 3; break;
@@ -39,7 +39,7 @@ namespace _21
                     case "K": sum = sum + 10; break;
                     case "t": sum = sum + 10; break;
                     case "T": sum = sum + 10; break;
-                    default: Console.WriteLine("Такой карты не существует в колоде попробуйте еще раз:");
+                    default: Console.WriteLine("Такой карты не существует в колоде попробуйте еще раз:"); // при несовпадении программа просит ввсети карту заново (счетчик не засчитывает попытку)
                         counter += -1;
                         break;
 
@@ -47,7 +47,7 @@ namespace _21
 
             }
 
-            Console.Write($"Сумма карт на руках: {sum}");
+            Console.Write($"Сумма карт на руках: {sum}");   // выводится количество очков на руках
 
             Console.ReadKey(); //  необходимо зациклить игру что бы она начиналась с начала 
         }
