@@ -10,6 +10,7 @@ namespace Homework_Theme_03
     {
         static void Main(string[] args)
         {
+            #region(task)
             // Просматривая сайты по поиску работы, у вас вызывает интерес следующая вакансия:
 
             // Требуемый опыт работы: без опыта
@@ -69,6 +70,36 @@ namespace Homework_Theme_03
             // Ход User2: 3
             //
             // User2 победил!
+            #endregion
+
+
+            // Приветствие
+            Console.WriteLine("Приветствую вас игроки.\n Вы в игре.");
+
+
+            // создание игроков в кол-ве до 5 
+            String User1 = (Console.ReadLine());
+            String User2 = (Console.ReadLine());
+            string User3 = (Console.ReadLine());
+            string User4 = (Console.ReadLine());
+            string user5 = (Console.ReadLine());
+
+            // возможность изменения максимального значения загадоного числа (размер игры)
+            int randmax = int.Parse(Console.ReadLine());
+            Random rand = new Random ();
+            int gameNumber = rand.Next(12, randmax);
+
+            // возможность изменения шага хода (сложность)
+            byte userTry = 1;
+
+            while (gameNumber == 0)
+            {
+                Console.WriteLine($"Остаток: {gameNumber}.");
+                gameNumber = gameNumber - userTry;
+            }
+
+
+            Console.ReadKey();
         }
     }
 }
