@@ -77,27 +77,124 @@ namespace Homework_Theme_03
             Console.WriteLine("Приветствую вас игроки.\n Вы в игре.");
 
 
-            // создание игроков в кол-ве до 5 
-            String User1 = (Console.ReadLine());
-            String User2 = (Console.ReadLine());
-            string User3 = (Console.ReadLine());
-            string User4 = (Console.ReadLine());
-            string user5 = (Console.ReadLine());
+            // создание игроков в кол-ве до 2-5 
+            #region (Количество игроков)
+
+            while (true)
+            {
+                Console.WriteLine("сколько игроков будет участвовать?:");
+                int gamers = int.Parse(Console.ReadLine());
+
+                if (gamers == 2)
+                {
+                    Console.WriteLine("Игрок 1 представьтесь пожалуста:");
+                    String User1 = (Console.ReadLine());
+                    Console.WriteLine("Игрок 2 представьтесь пожалуста:");
+                    String User2 = (Console.ReadLine());
+                }
+                else
+                {
+                    if (gamers == 3)
+                    {
+                        Console.WriteLine("Игрок 1 представьтесь пожалуста:");
+                        String User1 = (Console.ReadLine());
+                        Console.WriteLine("Игрок 2 представьтесь пожалуста:");
+                        String User2 = (Console.ReadLine());
+                        Console.WriteLine("Игрок 3 представьтесь пожалуста:");
+                        string User3 = (Console.ReadLine());
+                    }
+                    else
+                    {
+                        if (gamers == 4)
+                        {
+                            Console.WriteLine("Игрок 1 представьтесь пожалуста:");
+                            String User1 = (Console.ReadLine());
+                            Console.WriteLine("Игрок 2 представьтесь пожалуста:");
+                            String User2 = (Console.ReadLine());
+                            Console.WriteLine("Игрок 3 представьтесь пожалуста:");
+                            string User3 = (Console.ReadLine());
+                            Console.WriteLine("Игрок 4 представьтесь пожалуста:");
+                            string User4 = (Console.ReadLine());
+                        }
+                        else
+                        {
+                            if (gamers == 5)
+                            {
+                                Console.WriteLine("Игрок 1 представьтесь пожалуста:");
+                                String User1 = (Console.ReadLine());
+                                Console.WriteLine("Игрок 2 представьтесь пожалуста:");
+                                String User2 = (Console.ReadLine());
+                                Console.WriteLine("Игрок 3 представьтесь пожалуста:");
+                                string User3 = (Console.ReadLine());
+                                Console.WriteLine("Игрок 4 представьтесь пожалуста:");
+                                string User4 = (Console.ReadLine());
+                                Console.WriteLine("Игрок 5 представьтесь пожалуста:");
+                                string user5 = (Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Слишком много игроков))))");
+                            }
+                        }
+                    }
+                }
+                break;
+            }
+            #endregion
+
 
             // возможность изменения максимального значения загадоного числа (размер игры)
-            int randmax = int.Parse(Console.ReadLine());
-            Random rand = new Random ();
-            int gameNumber = rand.Next(12, randmax);
+
+            int gameNumber;
+            int randmax;
+
+            while (true)
+            {
+                Console.WriteLine("введите пожалуста желаемый размер игры:");
+                randmax = int.Parse(Console.ReadLine());
+
+                if (randmax > 11 && randmax < 301)
+                {
+                    Random rand = new Random();
+                    gameNumber = rand.Next(12, randmax);
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Слишком большой размер)))))");
+                }
+                
+                break ;
+               
+            }
+            
 
             // возможность изменения шага хода (сложность)
-            byte userTry = 1;
+            int userTry;
+            int maxLimitTurn = 4;  // Ограничение максимального значения хода
 
-            while (gameNumber == 0)
+
+            while (gameNumber > 0)      
             {
-                Console.WriteLine($"Остаток: {gameNumber}.");
-                gameNumber = gameNumber - userTry;
+                Console.WriteLine($"Остаток: {gameNumber}");
+
+                //switch (gameNumber)
+                //    case 1:
+                Console.WriteLine("Your turn:");
+                userTry = int.Parse(Console.ReadLine());
+
+                if (userTry > maxLimitTurn)
+                {
+                    Console.WriteLine("Your turn:");
+                }
+                else
+                {
+                    gameNumber = gameNumber - userTry;
+                }
             }
 
+            Console.WriteLine($"game over: {gameNumber}");
 
             Console.ReadKey();
         }
