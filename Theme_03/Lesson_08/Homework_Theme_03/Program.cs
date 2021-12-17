@@ -145,6 +145,8 @@ namespace Homework_Theme_03
 
             // возможность изменения максимального значения загадоного числа (размер игры)
 
+            #region(Размер игры)
+
             int gameNumber;
             int randmax;
 
@@ -168,13 +170,17 @@ namespace Homework_Theme_03
                 break ;
                
             }
-            
+            #endregion
 
             // возможность изменения шага хода (сложность)
+
+            #region(Шаг игры)
             int userTry;
             int maxLimitTurn = 4;  // Ограничение максимального значения хода
 
+            #endregion
 
+            #region(Тело игры)
             while (gameNumber > 0)      
             {
                 Console.WriteLine($"Остаток: {gameNumber}");
@@ -195,6 +201,7 @@ namespace Homework_Theme_03
             }
 
             Console.WriteLine($"game over: {gameNumber}");
+            #endregion
 
             Console.ReadKey();
         }
