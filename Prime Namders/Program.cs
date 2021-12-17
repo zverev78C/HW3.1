@@ -47,18 +47,18 @@ namespace Prime_Namders
             int D = 2;                          // делитель  
             int O;                                // количество циклов
 
-            while (true)
+            while (true)  // цикл который проверяет число на простое перебором деления
             {
                 O = N % D;
                 D++;
 
-                if (O == 0 & N>2 )
+                if (O == 0 & N>2 ) // проверка простого числа 
                 {
-                    Console.WriteLine("Число HE нaтуральное");
+                    Console.WriteLine("Число HE является простым");
                 }
                 else
                 {
-                    Console.WriteLine("Число натуральное");
+                    Console.WriteLine("Число простое");
                 }
                 break;
             }
