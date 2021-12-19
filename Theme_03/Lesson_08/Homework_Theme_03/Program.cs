@@ -74,18 +74,18 @@ namespace Homework_Theme_03
 
 
             // Приветствие
-            Console.WriteLine("Приветствую вас игроки.\n Вы в игре.");
+            Console.WriteLine("Приветствую вас игроки.\n Вы в игре.");   // Игра приветствует игроков
 
 
             // создание игроков в кол-ве до 2-5 
             #region (Количество игроков)
 
-            while (true)
+            while (true)   // цикл необходим на случай если пользователь решит создать больше 5 игроков
             {
                 Console.WriteLine("сколько игроков будет участвовать?:");
                 int gamers = int.Parse(Console.ReadLine());
 
-                if (gamers == 2)
+                if (gamers == 2)                // каскад условий для выбора количества игроков (наверное надо было делать через switch)
                 {
                     Console.WriteLine("Игрок 1 представьтесь пожалуста:");
                     String User1 = (Console.ReadLine());
@@ -147,29 +147,32 @@ namespace Homework_Theme_03
 
             #region(Размер игры)
 
-            int gameNumber;
-            int randmax;
+            int gameNumber;  // переменная для числа игры
+            int randmax;     // переменная для ограничения игры
 
             while (true)
             {
-                Console.WriteLine("введите пожалуста желаемый размер игры:");
+                Console.WriteLine("Введите пожалуйста желаемый размер игры от 12 до 300:");  // программма просит пользователя ввести размер игры я ограничил это число 12 и 300
                 randmax = int.Parse(Console.ReadLine());
 
-                if (randmax > 11 && randmax < 301)
+                if (randmax > 11 && randmax < 301)     // каскад условий который ограничивает размер загадываемого числа
                 {
-                    Random rand = new Random();
-                    gameNumber = rand.Next(12, randmax);
-
-
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("Слишком большой размер)))))");
+                    if (randmax > 300)
+                    {
+                        Console.WriteLine("Слишком большой размер)))))");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Слишком маленьки роазмер игры все быстро закончится");
+                    }
                 }
-                
-                break ;
-               
             }
+            Random rand = new Random();
+            gameNumber = rand.Next(12, randmax);  // создается случайным образом число в пределах заданных параметров
             #endregion
 
             // возможность изменения шага хода (сложность)
