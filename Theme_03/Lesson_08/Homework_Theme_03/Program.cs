@@ -298,7 +298,7 @@ namespace Homework_Theme_03
 
             else
             {
-
+                Console.WriteLine("один игрок");
             }
               
 
