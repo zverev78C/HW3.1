@@ -80,56 +80,63 @@ namespace Homework_Theme_03
             // создание игроков в кол-ве до 2-5 
             #region (Количество игроков)
 
+            string User1 = "1";
+            string User2 = "2";
+            string User3 = "3";
+            string User4 = "4";
+            string User5 = "5";
+            int gamers;
+
             while (true)   // цикл необходим на случай если пользователь решит создать больше 5 игроков
             {
                 Console.WriteLine("сколько игроков будет участвовать?:");
-                int gamers = int.Parse(Console.ReadLine());
+                gamers = int.Parse(Console.ReadLine());
 
                 if (gamers == 2)                // каскад условий для выбора количества игроков (наверное надо было делать через switch)
                 {
                     Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                    String User1 = (Console.ReadLine());
+                    User1 = (Console.ReadLine());
                     Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                    String User2 = (Console.ReadLine());
+                    User2 = (Console.ReadLine());
                 }
                 else
                 {
                     if (gamers == 3)
                     {
                         Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                        String User1 = (Console.ReadLine());
+                        User1 = (Console.ReadLine());
                         Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                        String User2 = (Console.ReadLine());
+                        User2 = (Console.ReadLine());
                         Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                        string User3 = (Console.ReadLine());
+                        User3 = (Console.ReadLine());
                     }
                     else
                     {
                         if (gamers == 4)
                         {
                             Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                            String User1 = (Console.ReadLine());
+                            User1 = (Console.ReadLine());
                             Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                            String User2 = (Console.ReadLine());
+                            User2 = (Console.ReadLine());
                             Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                            string User3 = (Console.ReadLine());
+                            User3 = (Console.ReadLine());
                             Console.WriteLine("Игрок 4 представьтесь пожалуста:");
-                            string User4 = (Console.ReadLine());
+                            User4 = (Console.ReadLine());
                         }
                         else
                         {
                             if (gamers == 5)
                             {
                                 Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                                String User1 = (Console.ReadLine());
+                                User1 = (Console.ReadLine());
                                 Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                                String User2 = (Console.ReadLine());
+                                User2 = (Console.ReadLine());
                                 Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                                string User3 = (Console.ReadLine());
+                                User3 = (Console.ReadLine());
                                 Console.WriteLine("Игрок 4 представьтесь пожалуста:");
-                                string User4 = (Console.ReadLine());
+                                User4 = (Console.ReadLine());
                                 Console.WriteLine("Игрок 5 представьтесь пожалуста:");
-                                string user5 = (Console.ReadLine());
+                                User5 = (Console.ReadLine());
                             }
                             else
                             {
@@ -139,7 +146,10 @@ namespace Homework_Theme_03
                     }
                 }
                 break;
+
             }
+
+         
             #endregion
 
 
@@ -178,29 +188,80 @@ namespace Homework_Theme_03
             // возможность изменения шага хода (сложность)
 
             #region(Шаг игры)
+
+            Console.WriteLine("ВВедите пожалуйста желаемый шаг игры (максимально возможный ход игрока)");
+            int maxLimitTurn = int.Parse(Console.ReadLine());  // Ограничение максимального значения хода
+
             int userTry;
-            int maxLimitTurn = 4;  // Ограничение максимального значения хода
+
 
             #endregion
 
             #region(Тело игры)
-            while (gameNumber > 0)      
+
+
+            int ActiveUser = gamers;
+
+            while (gameNumber > 0)      // Оновной цикл игры
             {
-                Console.WriteLine($"Остаток: {gameNumber}");
-
-                //switch (gameNumber)
-                //    case 1:
-                Console.WriteLine("Your turn:");
-                userTry = int.Parse(Console.ReadLine());
-
-                if (userTry > maxLimitTurn)
+               
+                ActiveUser ++;
+                if (ActiveUser > gamers + 1)
                 {
-                    Console.WriteLine("Your turn:");
+                    ActiveUser = 0;
                 }
                 else
                 {
-                    gameNumber = gameNumber - userTry;
+                    switch (ActiveUser)
+                    {
+                        case 1:
+                            Console.WriteLine($"Остаток: {gameNumber}");
+                            Console.WriteLine($"{User1} ваш ход:");
+                            userTry = int.Parse(Console.ReadLine());
+
+                            if (userTry > maxLimitTurn)
+                            {
+                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                            }
+                            else
+                            {
+                                gameNumber = gameNumber - userTry;
+                            }
+                            break;
+                        case 2:
+                            Console.WriteLine($"Остаток: {gameNumber}");
+                            Console.WriteLine($"{User2} ваш ход:");
+                            userTry = int.Parse(Console.ReadLine());
+
+                            if (userTry > maxLimitTurn)
+                            {
+                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                            }
+                            else
+                            {
+                                gameNumber = gameNumber - userTry;
+                            }
+                            break;
+                        case 3:
+                            Console.WriteLine($"Остаток: {gameNumber}");
+                            Console.WriteLine($"{User3} ваш ход:");
+                            userTry = int.Parse(Console.ReadLine());
+
+                            if (userTry > maxLimitTurn)
+                            {
+                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                            }
+                            else
+                            {
+                                gameNumber = gameNumber - userTry;
+                            }
+                            break;
+
+
+                    }
+
                 }
+               
             }
 
             Console.WriteLine($"game over: {gameNumber}");
