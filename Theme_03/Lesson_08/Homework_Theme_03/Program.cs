@@ -205,95 +205,104 @@ namespace Homework_Theme_03
 
             int ActiveUser = gamers;
 
-            while (gameNumber > 0)      // Оновной цикл игры
+            if (gamers < 1 & gamers < 6)
+            {
+                while (gameNumber > 0)      // Оновной цикл игры
+                {
+                    ActiveUser++;
+                    if (ActiveUser > gamers)
+                    {
+                        ActiveUser = 0;
+                    }
+                    else
+                    {
+                        switch (ActiveUser)  // переключатель хода игроков для вызывания по имени
+                        {
+                            case 1: // игрок 1
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User1} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+                            case 2:  // игрок 2
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User2} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+                            case 3: // игрок 3
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User3} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+                            case 4:  // игрок 4
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User4} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+                            case 5: // игрок 5
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User5} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+
+
+                        }  // переключатель хода игроков для вызывания по имени
+
+                    }
+                }
+            }
+
+            else
             {
 
-                ActiveUser++;
-                if (ActiveUser > gamers)
-                {
-                    ActiveUser = 0;
-                }
-                else
-                {
-                    switch (ActiveUser)  // переключатель хода игроков для вызывания по имени
-                    {
-                        case 1: // игрок 1
-                            Console.WriteLine($"Остаток: {gameNumber}");
-                            Console.WriteLine($"{User1} ваш ход:");
-                            userTry = int.Parse(Console.ReadLine());
+            }
+              
 
-                            if (userTry > maxLimitTurn)
-                            {
-                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
-                            }
-                            else
-                            {
-                                gameNumber = gameNumber - userTry;
-                            }
-                            break;
-                        case 2:  // игрок 2
-                            Console.WriteLine($"Остаток: {gameNumber}");
-                            Console.WriteLine($"{User2} ваш ход:");
-                            userTry = int.Parse(Console.ReadLine());
-
-                            if (userTry > maxLimitTurn)
-                            {
-                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
-                            }
-                            else
-                            {
-                                gameNumber = gameNumber - userTry;
-                            }
-                            break;
-                        case 3: // игрок 3
-                            Console.WriteLine($"Остаток: {gameNumber}");
-                            Console.WriteLine($"{User3} ваш ход:");
-                            userTry = int.Parse(Console.ReadLine());
-
-                            if (userTry > maxLimitTurn)
-                            {
-                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
-                            }
-                            else
-                            {
-                                gameNumber = gameNumber - userTry;
-                            }
-                            break;
-                        case 4:  // игрок 4
-                            Console.WriteLine($"Остаток: {gameNumber}");
-                            Console.WriteLine($"{User4} ваш ход:");
-                            userTry = int.Parse(Console.ReadLine());
-
-                            if (userTry > maxLimitTurn)
-                            {
-                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
-                            }
-                            else
-                            {
-                                gameNumber = gameNumber - userTry;
-                            }
-                            break;
-                        case 5: // игрок 5
-                            Console.WriteLine($"Остаток: {gameNumber}");
-                            Console.WriteLine($"{User5} ваш ход:");
-                            userTry = int.Parse(Console.ReadLine());
-
-                            if (userTry > maxLimitTurn)
-                            {
-                                Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
-                            }
-                            else
-                            {
-                                gameNumber = gameNumber - userTry;
-                            }
-                            break;
-
-
-                    }  // переключатель хода игроков для вызывания по имени
-
-                }
-
-            } // Оновной цикл игры
+             // Оновной цикл игры
             #endregion
 
             // окончание игры
@@ -304,7 +313,7 @@ namespace Homework_Theme_03
                 case 3: Console.WriteLine($"game over: {User3} победил, поздравляю!!!"); break;  // игрок 3
                 case 4: Console.WriteLine($"game over: {User4} победил, поздравляю!!!"); break;  // игрок 4
                 case 5: Console.WriteLine($"game over: {User5} победил, поздравляю!!!"); break;  // игрок 5    
-            } // окончание игры
+             } // окончание игры
             Console.ReadKey();
         }
     }
