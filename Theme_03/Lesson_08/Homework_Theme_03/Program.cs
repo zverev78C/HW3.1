@@ -109,6 +109,7 @@ namespace Homework_Theme_03
                         User2 = (Console.ReadLine());
                         Console.WriteLine("Игрок 3 представьтесь пожалуста:");
                         User3 = (Console.ReadLine());
+                        break;
                     }
                     else
                     {
@@ -122,6 +123,7 @@ namespace Homework_Theme_03
                             User3 = (Console.ReadLine());
                             Console.WriteLine("Игрок 4 представьтесь пожалуста:");
                             User4 = (Console.ReadLine());
+                            break;
                         }
                         else
                         {
@@ -137,6 +139,7 @@ namespace Homework_Theme_03
                                 User4 = (Console.ReadLine());
                                 Console.WriteLine("Игрок 5 представьтесь пожалуста:");
                                 User5 = (Console.ReadLine());
+                                break;
                             }
                             else
                             {
@@ -145,7 +148,7 @@ namespace Homework_Theme_03
                         }
                     }
                 }
-                break;
+               // break;
 
             }
 
@@ -153,7 +156,7 @@ namespace Homework_Theme_03
             #endregion
 
 
-            // возможность изменения максимального значения загадоного числа (размер игры)
+            // возможность изменения максимального значения загаданного числа (размер игры)
 
             #region(Размер игры)
 
@@ -294,7 +297,6 @@ namespace Homework_Theme_03
             #endregion
 
             // окончание игры
-
             switch (ActiveUser)  // окончание игры
             {
                 case 1: Console.WriteLine($"game over: {User1} победил, поздравляю!!!"); break;  // игрок 1
@@ -302,7 +304,7 @@ namespace Homework_Theme_03
                 case 3: Console.WriteLine($"game over: {User3} победил, поздравляю!!!"); break;  // игрок 3
                 case 4: Console.WriteLine($"game over: {User4} победил, поздравляю!!!"); break;  // игрок 4
                 case 5: Console.WriteLine($"game over: {User5} победил, поздравляю!!!"); break;  // игрок 5    
-            }
+            } // окончание игры
             Console.ReadKey();
         }
     }
