@@ -42,26 +42,27 @@ namespace Prime_Namders
 
             #endregion
 
-            Console.WriteLine("Введите целое число "); //программа просит пользователя ввести число
-            int N = int.Parse(Console.ReadLine()); // число вводимое пользователем
-            int D = 2;                          // делитель  
-            int O;                                // количество циклов
-
-            while (true)  // цикл который проверяет число на простое перебором деления
+            bool prost = true;
+            Console.WriteLine("Введите число:");
+            int N = int.Parse(Console.ReadLine());
+            for (int D = 2; D <= N / 2; D++)
             {
-                O = N % D;
-                D++;
-
-                if (O == 0 & N>2 ) // проверка простого числа 
+                Console.WriteLine(i);
+                if (N % D == 0)
                 {
-                    Console.WriteLine("Число HE является простым");
+                    prost = false;
+                    break;
                 }
-                else
-                {
-                    Console.WriteLine("Число простое");
-                }
-                break;
             }
+            if (prost)
+            {
+                Console.WriteLine("Число простое");
+            }
+            else
+            {
+                Console.WriteLine("Число не простое");
+            }
+
             Console.ReadKey();
         }
     }
