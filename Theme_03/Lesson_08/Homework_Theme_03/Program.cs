@@ -143,7 +143,16 @@ namespace Homework_Theme_03
                             }
                             else
                             {
-                                Console.WriteLine("Слишком много игроков))))");
+                                if (gamers ==1)
+                                {
+                                    Console.WriteLine("Игрок 1 представьтесь пожалуста:");
+                                    User1 = (Console.ReadLine());
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Слишком много игроков))))");
+                                }
+                              
                             }
                         }
                     }
