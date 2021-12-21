@@ -205,7 +205,7 @@ namespace Homework_Theme_03
 
             int ActiveUser = gamers;
 
-            if (gamers < 1 & gamers < 6)
+            if (gamers < 1 || gamers < 6)
             {
                 while (gameNumber > 0)      // Оновной цикл игры
                 {
