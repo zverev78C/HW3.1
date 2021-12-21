@@ -215,11 +215,13 @@ namespace Homework_Theme_03
 
 
             int ActiveUser = gamers;
+            int cpuTry = 1;
 
             if (gamers == 1)
             {
                 User2 = "CPU";
                 gamers = 2;
+
                 while (gameNumber > 0)
                 {
                     ActiveUser++;
@@ -249,17 +251,24 @@ namespace Homework_Theme_03
                             case 2:
                                 Console.WriteLine($"Остаток: {gameNumber}");
                                 Console.WriteLine($"{User2} ваш ход:");
-                              //  userTry = int.Parse(Console.ReadLine());
 
                                 if (gameNumber < maxLimitTurn * 2)
                                 {
-                                    int cpuTry = gameNumber - maxLimitTurn - 1;
-                                    gameNumber = gameNumber - cpuTry;
-                                    Console.WriteLine($"{cpuTry}");
+                                    if (gameNumber <= maxLimitTurn)
+                                    {
+                                        cpuTry = gameNumber;
+                                        gameNumber = gameNumber - cpuTry;
+                                    }
+                                    else
+                                    {
+                                        cpuTry = gameNumber - maxLimitTurn - 1;
+                                        gameNumber = gameNumber - cpuTry;
+                                        Console.WriteLine($"{cpuTry}");
+                                    } 
                                 }
                                 else
                                 {
-                                    int cpuTry = gameNumber - maxLimitTurn;
+                                    cpuTry = gameNumber - maxLimitTurn;
                                     gameNumber = gameNumber - maxLimitTurn;
                                     Console.WriteLine($"{maxLimitTurn}");
                                 }
@@ -363,7 +372,7 @@ namespace Homework_Theme_03
             }
 
 
-                // Оновной цикл игры
+                // Основной цикл игры
                 #endregion
 
                 // окончание игры
