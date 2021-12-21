@@ -98,6 +98,7 @@ namespace Homework_Theme_03
                     User1 = (Console.ReadLine());
                     Console.WriteLine("Игрок 2 представьтесь пожалуста:");
                     User2 = (Console.ReadLine());
+                    break;
                 }
                 else
                 {
@@ -147,6 +148,7 @@ namespace Homework_Theme_03
                                 {
                                     Console.WriteLine("Игрок 1 представьтесь пожалуста:");
                                     User1 = (Console.ReadLine());
+                                    break;
                                 }
                                 else
                                 {
@@ -214,7 +216,62 @@ namespace Homework_Theme_03
 
             int ActiveUser = gamers;
 
-            if (gamers < 1 || gamers < 6)
+            if (gamers == 1)
+            {
+                User2 = "CPU";
+                gamers = 2;
+                while (gameNumber > 0)
+                {
+                    ActiveUser++;
+                    if (ActiveUser > gamers)
+                    {
+                        ActiveUser = 0;
+                    }
+
+                    else
+                    {
+                        switch (ActiveUser)
+                        {
+                            case 1:
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User1} ваш ход:");
+                                userTry = int.Parse(Console.ReadLine());
+
+                                if (userTry > maxLimitTurn)
+                                {
+                                    Console.WriteLine($"Слишком большой ход максимум {maxLimitTurn}\nПопробуйте еще раз:");
+                                }
+                                else
+                                {
+                                    gameNumber = gameNumber - userTry;
+                                }
+                                break;
+                            case 2:
+                                Console.WriteLine($"Остаток: {gameNumber}");
+                                Console.WriteLine($"{User2} ваш ход:");
+                              //  userTry = int.Parse(Console.ReadLine());
+
+                                if (gameNumber < maxLimitTurn * 2)
+                                {
+                                    int cpuTry = gameNumber - maxLimitTurn - 1;
+                                    gameNumber = gameNumber - cpuTry;
+                                    Console.WriteLine($"{cpuTry}");
+                                }
+                                else
+                                {
+                                    int cpuTry = gameNumber - maxLimitTurn;
+                                    gameNumber = gameNumber - maxLimitTurn;
+                                    Console.WriteLine($"{maxLimitTurn}");
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("WTF");
+                                break;
+                        }
+                    }
+                }
+            }
+            else
             {
                 while (gameNumber > 0)      // Оновной цикл игры
                 {
@@ -305,17 +362,12 @@ namespace Homework_Theme_03
                 }
             }
 
-            else
-            {
-                Console.WriteLine("один игрок");
-            }
-              
 
-             // Оновной цикл игры
-            #endregion
+                // Оновной цикл игры
+                #endregion
 
-            // окончание игры
-            switch (ActiveUser)  // окончание игры
+                // окончание игры
+                switch (ActiveUser)  // окончание игры
             {
                 case 1: Console.WriteLine($"game over: {User1} победил, поздравляю!!!"); break;  // игрок 1
                 case 2: Console.WriteLine($"game over: {User2} победил, поздравляю!!!"); break;  // игрок 2
