@@ -85,85 +85,32 @@ namespace Homework_Theme_03
             string User3 = "3";
             string User4 = "4";
             string User5 = "5";
-            int gamers;
+            int gamers = 0;                // переменная количества игроков
+            string ActiveName = "1";   // переменная для имени активного игрока
+            int ActiveUser = gamers;   // переменная для очередности ходов
+            int cpuTry = 1;            // переменная для хода компьютера
 
-            while (true)   // цикл необходим на случай если пользователь решит создать больше 5 игроков
+
+            Console.WriteLine("сколько игроков будет участвовать?:");
+            gamers = int.Parse(Console.ReadLine());
+
+            for (int UserName = 1; UserName <= gamers; UserName++)
             {
-                Console.WriteLine("сколько игроков будет участвовать?:");
-                gamers = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Игрок {UserName} представьтесь пожалуста:");
+                ActiveName = (Console.ReadLine());
 
-                if (gamers == 2)                // каскад условий для выбора количества игроков (наверное надо было делать через switch)
+                switch (UserName)
                 {
-                    Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                    User1 = (Console.ReadLine());
-                    Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                    User2 = (Console.ReadLine());
-                    break;
-                }
-                else
-                {
-                    if (gamers == 3)
-                    {
-                        Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                        User1 = (Console.ReadLine());
-                        Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                        User2 = (Console.ReadLine());
-                        Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                        User3 = (Console.ReadLine());
+                    case 1: User1 = ActiveName; break;
+                    case 2: User2 = ActiveName; break;
+                    case 3: User3 = ActiveName; break;
+                    case 4: User4 = ActiveName; break;
+                    case 5: User5 = ActiveName; break;
+                    default: Console.WriteLine("WTF");
                         break;
-                    }
-                    else
-                    {
-                        if (gamers == 4)
-                        {
-                            Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                            User1 = (Console.ReadLine());
-                            Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                            User2 = (Console.ReadLine());
-                            Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                            User3 = (Console.ReadLine());
-                            Console.WriteLine("Игрок 4 представьтесь пожалуста:");
-                            User4 = (Console.ReadLine());
-                            break;
-                        }
-                        else
-                        {
-                            if (gamers == 5)
-                            {
-                                Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                                User1 = (Console.ReadLine());
-                                Console.WriteLine("Игрок 2 представьтесь пожалуста:");
-                                User2 = (Console.ReadLine());
-                                Console.WriteLine("Игрок 3 представьтесь пожалуста:");
-                                User3 = (Console.ReadLine());
-                                Console.WriteLine("Игрок 4 представьтесь пожалуста:");
-                                User4 = (Console.ReadLine());
-                                Console.WriteLine("Игрок 5 представьтесь пожалуста:");
-                                User5 = (Console.ReadLine());
-                                break;
-                            }
-                            else
-                            {
-                                if (gamers ==1)
-                                {
-                                    Console.WriteLine("Игрок 1 представьтесь пожалуста:");
-                                    User1 = (Console.ReadLine());
-                                    break;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Слишком много игроков))))");
-                                }
-                              
-                            }
-                        }
-                    }
                 }
-               // break;
-
             }
-
-
+           
             #endregion
 
 
@@ -214,9 +161,8 @@ namespace Homework_Theme_03
             #region(Тело игры)
 
 
-            int ActiveUser = gamers;
-            int cpuTry = 1;
-            string ActiveName = "1";
+           
+             
 
             if (gamers == 1)
             {
