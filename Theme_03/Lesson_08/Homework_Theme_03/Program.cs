@@ -159,7 +159,6 @@ namespace Homework_Theme_03
             #region(Тело игры)
             do
             {
-
                 Random rand = new Random();
                 gameNumber = rand.Next(12, randmax);  // создается случайным образом число в пределах заданных параметров
 
@@ -275,10 +274,9 @@ namespace Homework_Theme_03
 
                 // окончание игры
                 Console.WriteLine($"game over: {ActiveName} победил, поздравляю!!!");
-                Console.WriteLine($"Матч Реванш? нажмите y");
+                Console.WriteLine($"Матч Реванш? нажмите 1");
                 revenge = (Console.ReadLine());
-            } while (revenge == "y");
-
+            } while (revenge == "1");
 
             Console.ReadKey();
         }
