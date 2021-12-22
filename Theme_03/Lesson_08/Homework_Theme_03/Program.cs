@@ -275,7 +275,7 @@ namespace Homework_Theme_03
 
                 // окончание игры
                 Console.WriteLine($"game over: {ActiveName} победил, поздравляю!!!");
-                Console.WriteLine($"Матч Реванш?");
+                Console.WriteLine($"Матч Реванш? нажмите y");
                 revenge = (Console.ReadLine());
             } while (revenge == "y");
 
