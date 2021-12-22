@@ -54,14 +54,15 @@ namespace Prime_Namders
                     break;
                 }
             }
-            if (prost)
-            {
-                Console.WriteLine("Число простое");
-            }
-            else
-            {
-                Console.WriteLine("Число не простое");
-            }
+            //if (prost)
+            //{
+            //    Console.WriteLine("Число простое");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Число не простое");
+            //} 
+            Console.WriteLine(prost? "Число простое":"Не простое число");
 
             Console.ReadKey();
         }

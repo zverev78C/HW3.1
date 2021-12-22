@@ -138,7 +138,7 @@ namespace Homework_Theme_03
                     }
                     else
                     {
-                        Console.WriteLine("Слишком маленьки роазмер игры все быстро закончится");
+                        Console.WriteLine("Слишком маленький размер игры все быстро закончится");
                     }
                 }
             }
