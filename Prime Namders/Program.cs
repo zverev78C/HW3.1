@@ -47,7 +47,7 @@ namespace Prime_Namders
             int N = int.Parse(Console.ReadLine());
             for (int D = 2; D <= N / 2; D++)
             {
-                Console.WriteLine($"Делитель: { D}");
+              //  Console.WriteLine($"Делитель: { D}");
                 if (N % D == 0)
                 {
                     prost = false;
